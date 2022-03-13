@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Share</button>
+
+    <script>
+        const shareButton = document.querySelector('button')
+        const title = window.document.title
+        const url = window.document.href
+        shareButton.addEventListener('click', () => {
+            if(navigator.share){
+                navigator.share({
+                    title: `${title}`,
+                    url: `${url}`,
+                }).then(()=>{
+                    console.log('Thanks for Sharing')
+                }).catch(console.log(error))
+            }else{
+                
+            }
+        })
+    </script>
+</body>
+</html>

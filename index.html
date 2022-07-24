@@ -11,6 +11,8 @@
     <button id="cam">Camera</button>
     <video id="video" autoplay>Stream Not Available</video>
 
+    <input type="file" accept="image/*" capture="camera">
+
     <script>
         const shareButton = document.querySelector('#share')
         const title = window.document.title
@@ -27,6 +29,8 @@
                 
             }
         })
+
+        
 
         const camBtn = document.querySelector('#cam')
         camBtn.addEventListener('click', async() => {

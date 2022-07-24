@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Share</button>
+    <button id="share">Share</button>
+    <button id="cam">Camera</button>
 
     <script>
-        const shareButton = document.querySelector('button')
+        const shareButton = document.querySelector('#share')
         const title = window.document.title
         const url = window.document.href
         shareButton.addEventListener('click', () => {
@@ -24,6 +25,14 @@
             }else{
                 
             }
+        })
+
+        const camBtn = document.querySelector('#cam')
+        camBtn.addEventListener('click', async() => {
+            let stream = null;
+            try {
+                stream = await navigator.mediaDevices.getUserMedia();
+            } catch(error) {}
         })
     </script>
 </body>
